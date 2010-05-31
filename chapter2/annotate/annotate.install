@@ -1,5 +1,9 @@
 <?php
 // $Id$
+/**
+ * @file
+ * Annotate module installation file.
+ */
 
 /**
  * Implemtation of hook_install().
