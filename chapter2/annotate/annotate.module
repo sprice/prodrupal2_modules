@@ -16,7 +16,7 @@ function annotate_menu() {
     'title' => 'Node annotation',
     'description' => 'Adjust node annotation options.',
     'position' => 'right',
-    'weight'=> -5,
+    'weight' => -5,
     'page callback' => 'system_admin_menu_block_page',
     'access arguments' => array('administer site configuration'),
     'file' => 'system.admin.inc',
