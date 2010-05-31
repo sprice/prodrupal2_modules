@@ -102,7 +102,7 @@ function annotate_entry_form($form_state, $node) {
   // Define a submit function.
   $form['annotate']['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Update'),
+    '#value' => t('Update Annotation'),
     );
   
   return $form;
