@@ -12,7 +12,7 @@
  * Implementation of hook_menu().
  */
 function annotate_menu() {
-  $items['admin/annotate'] = array(
+  $items['admin/settings/annotate'] = array(
     'title' => 'Node annotation',
     'description' => 'Adjust node annotation options.',
     'position' => 'right',
@@ -22,7 +22,7 @@ function annotate_menu() {
     'file' => 'system.admin.inc',
     'file path' => drupal_get_path('module', 'system'),
     );
-  $items['admin/annotate/settings'] = array(
+  $items['admin/settings/annotate/settings'] = array(
     'title' => 'Annotation settings',
     'description' => 'Change how annotations behave.',
     'page callback' => 'drupal_get_form',
