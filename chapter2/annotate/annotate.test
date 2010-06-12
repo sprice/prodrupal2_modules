@@ -61,8 +61,8 @@ class AnnotateTestCase extends DrupalWebTestCase {
     $annotation2['note'] = $this->randomName(25);
     $this->drupalPost('node/1', $annotation2, t('Update Annotation'));
     $this->assertNoText($annotation['note']);
-    $this->assertText($annotation[2]['note']);
-    
+    $this->assertText($annotation2['note']);
+
   }
 
   /**
