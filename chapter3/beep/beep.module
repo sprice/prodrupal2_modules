@@ -65,7 +65,7 @@ function beep_multiple_beep_action_submit($form, $form_state) {
  * Configurable action. Beeps a specified number of times.
  */
 function beep_multiple_beep_action($object, $context) {
-  for ($i = 1; $i < $context['beeps']; $i++) {
+  for ($i = 1; $i <= $context['beeps']; $i++) {
     beep_beep();
   }
 }
