@@ -16,18 +16,18 @@ class AnnotateTestCase extends DrupalWebTestCase {
       'group' => t('Annotation'),
     );
   }
-  
+
   /**
    * Implementation of setUp().
    */
   function setUp() {
     parent::setUp('annotate');
-    
+
     // Create and login user
     $user = $this->drupalCreateUser(array('administer nodes'));
     $this->drupalLogin($user);
   }
-  
+
   /**
    * Implementation of tearDown(),
    */
@@ -43,19 +43,19 @@ class AnnotateTestCase extends DrupalWebTestCase {
     $edit = array();
     $edit['title'] = $this->randomName(8);
     $this->drupalPost('node/add/page', $edit, t('Save'));
-    
+
     // Test that the page create properly and contains annotations form
     $this->assertText(t('Page @title has been created.',
       array('@title' => $edit['title'])));
     $this->assertText(t('Annotations'));
     $this->assertText(t('Notes:'));
-    
+
     // Test initial annotation
     $annotation = array();
     $annotation['note'] = $this->randomName(16);
     $this->drupalPost('node/1', $annotation, t('Update Annotation'));
     $this->assertText($annotation['note']);
-    
+
     // Test updating annotation
     $annotation2 = array();
     $annotation2['note'] = $this->randomName(25);
@@ -64,7 +64,7 @@ class AnnotateTestCase extends DrupalWebTestCase {
     $this->assertText($annotation[2]['note']);
     
   }
-  
+
   /**
    * Test story content type annotation
    */
@@ -73,7 +73,7 @@ class AnnotateTestCase extends DrupalWebTestCase {
     $edit = array();
     $edit['title'] = $this->randomName(8);
     $this->drupalPost('node/add/story', $edit, t('Save'));
-    
+
     // Test that the story was created and that annotations cannot be added.
     // Story nodes may not have annotations by default
     $this->assertText(t('Story @title has been created.',
